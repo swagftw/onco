@@ -39,12 +39,16 @@ class MyCourses extends ConsumerWidget {
                           borderRadius: BorderRadius.circular(4)),
                       child: TextButton(
                         onPressed: () async {
-                          await context
-                              .read(firebaseApiProvider)
-                              .googleSignIn();
-                          watch(sharedPreferenceProvider)
-                              ?.setBool("isSkipped", false);
-                          watch(isSkippedProvider).state = false;
+                          try {
+                            await context
+                                .read(firebaseApiProvider)
+                                .googleSignIn();
+                            if (context.read(user) != null) {
+                              watch(sharedPreferenceProvider)
+                                  ?.setBool("isSkipped", false);
+                              watch(isSkippedProvider).state = false;
+                            }
+                          } catch (e) {}
                         },
                         child: Text(
                           "Sign in to view courses",

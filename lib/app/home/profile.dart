@@ -38,9 +38,11 @@ class ProfilePage extends ConsumerWidget {
                           await context
                               .read(firebaseApiProvider)
                               .googleSignIn();
-                          watch(sharedPreferenceProvider)
-                              ?.setBool("isSkipped", false);
-                          watch(isSkippedProvider).state = false;
+                         if (context.read(user) != null) {
+                              watch(sharedPreferenceProvider)
+                                  ?.setBool("isSkipped", false);
+                              watch(isSkippedProvider).state = false;
+                            }
                         },
                         child: Text(
                           "Sign in to see profile",

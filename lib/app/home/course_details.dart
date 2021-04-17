@@ -313,9 +313,11 @@ class _EnrollBottomButtonState extends State<EnrollBottomButton> {
               ? TextButton(
                   onPressed: () async {
                     await context.read(firebaseApiProvider).googleSignIn();
-                    watch(sharedPreferenceProvider)
-                        ?.setBool("isSkipped", false);
-                    watch(isSkippedProvider).state = false;
+                    if (context.read(user) != null) {
+                      watch(sharedPreferenceProvider)
+                          ?.setBool("isSkipped", false);
+                      watch(isSkippedProvider).state = false;
+                    }
                   },
                   child: Text(
                     "Sign in to Enroll",
