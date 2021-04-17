@@ -1,6 +1,7 @@
 # onco
 
-Online course provider app written in flutter and firebase firestore as repository
+Online course provider app written in flutter and firebase firestore as repository.
+Integrated razorpay payment gateway for enrolling to paid courses
 
 ## Getting Started
 
