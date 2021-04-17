@@ -17,11 +17,6 @@ final authStateProvider = StreamProvider.autoDispose<User?>((ref) {
   return FirebaseAuth.instance.userChanges();
 });
 
-final user = Provider.autoDispose<User?>((ref) {
-  final instance = ref.watch(firebaseInstanceProvider);
-  return instance.currentUser;
-});
-
 final isSkippedProvider = StateProvider<bool>((ref) {
   final pref = ref.watch(sharedPreferenceProvider);
   return pref?.getBool("isSkipped") ?? false;

@@ -29,7 +29,7 @@ class ProfilePage extends ConsumerWidget {
               SizedBox(
                 height: 16.h,
               ),
-              context.read(user) == null
+              context.read(firebaseInstanceProvider).currentUser == null
                   ? Container(
                       width: double.infinity,
                       color: primaryColor,
@@ -38,11 +38,14 @@ class ProfilePage extends ConsumerWidget {
                           await context
                               .read(firebaseApiProvider)
                               .googleSignIn();
-                         if (context.read(user) != null) {
-                              watch(sharedPreferenceProvider)
-                                  ?.setBool("isSkipped", false);
-                              watch(isSkippedProvider).state = false;
-                            }
+                          if (context
+                                  .read(firebaseInstanceProvider)
+                                  .currentUser !=
+                              null) {
+                            watch(sharedPreferenceProvider)
+                                ?.setBool("isSkipped", false);
+                            watch(isSkippedProvider).state = false;
+                          }
                         },
                         child: Text(
                           "Sign in to see profile",
@@ -61,16 +64,28 @@ class ProfilePage extends ConsumerWidget {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(24),
                           child: Image.network(
-                            watch(user)?.photoURL ?? "",
+                            context
+                                    .read(firebaseInstanceProvider)
+                                    .currentUser
+                                    ?.photoURL ??
+                                "",
                             fit: BoxFit.contain,
                           ),
                         ),
                       ),
                       title: Text(
-                        context.read(user)?.displayName ?? "",
+                        context
+                                .read(firebaseInstanceProvider)
+                                .currentUser
+                                ?.displayName ??
+                            "",
                         style: bodyStyle.copyWith(fontWeight: FontWeight.w600),
                       ),
-                      subtitle: Text(context.read(user)?.email ?? ""),
+                      subtitle: Text(context
+                              .read(firebaseInstanceProvider)
+                              .currentUser
+                              ?.email ??
+                          ""),
                     ),
               SizedBox(
                 height: 24.h,
@@ -88,8 +103,12 @@ class ProfilePage extends ConsumerWidget {
                           ),
                           Text(
                             courses
-                                .where((element) => element.student
-                                    .contains(context.read(user)?.uid ?? ""))
+                                .where((element) => element.student.contains(
+                                    context
+                                            .read(firebaseInstanceProvider)
+                                            .currentUser
+                                            ?.uid ??
+                                        ""))
                                 .toList()
                                 .length
                                 .toString(),

@@ -21,7 +21,7 @@ class AppBarCustom extends ConsumerWidget implements PreferredSizeWidget {
             },
             child: Icon(Icons.menu),
           ),
-          watch(user) == null
+          context.read(firebaseInstanceProvider).currentUser == null
               ? Container(
                   height: 36.h,
                   width: 36.h,
@@ -36,7 +36,11 @@ class AppBarCustom extends ConsumerWidget implements PreferredSizeWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(24),
                       child: Image.network(
-                        watch(user)?.photoURL ?? "",
+                        context
+                                .read(firebaseInstanceProvider)
+                                .currentUser
+                                ?.photoURL ??
+                            "",
                         fit: BoxFit.contain,
                       ),
                     ),

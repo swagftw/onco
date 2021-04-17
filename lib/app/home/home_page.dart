@@ -80,15 +80,12 @@ class HomePage extends ConsumerWidget {
   HomePage({required this.onTap});
   @override
   Widget build(BuildContext context, watch) {
-    final usr = watch(user);
-    final name = usr?.displayName?.split(" ")[0];
-
     return Scaffold(
       backgroundColor: Colors.white,
       drawer: Drawer(
         child: Column(
           children: [
-            context.read(user) == null
+            context.read(firebaseInstanceProvider).currentUser == null
                 ? ListTile(
                     leading: Container(
                       child: Image.asset("assets/images/google.png"),
@@ -108,7 +105,7 @@ class HomePage extends ConsumerWidget {
                   )
                 : Container(),
             Spacer(),
-            context.read(user) == null
+            context.read(firebaseInstanceProvider).currentUser == null
                 ? Container()
                 : ListTile(
                     leading: Icon(Icons.exit_to_app),
@@ -159,7 +156,12 @@ class HomePage extends ConsumerWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ActionTile(title: name != null ? "Hi $name," : "Hi,"),
+                  ActionTile(
+                      title:
+                          context.read(firebaseInstanceProvider).currentUser !=
+                                  null
+                              ? "Hi ${context.read(firebaseInstanceProvider).currentUser?.displayName},"
+                              : "Hi,"),
                   Text(
                     "Explore",
                     style: headingStyle.copyWith(color: secondaryColor),

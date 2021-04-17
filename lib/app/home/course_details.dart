@@ -245,10 +245,11 @@ class _EnrollBottomButtonState extends State<EnrollBottomButton> {
   }
 
   Future _handlePaymentSuccess(PaymentSuccessResponse response) async {
-    if (!widget.course.student.contains(context.read(user)?.uid)) {
+    if (!widget.course.student
+        .contains(context.read(firebaseInstanceProvider).currentUser?.uid)) {
       await context.read(courseEnrollApiProvider.notifier).enroll(
           widget.course.id,
-          context.read(user)?.uid ?? "",
+          context.read(firebaseInstanceProvider).currentUser?.uid ?? "",
           widget.course.student);
       showDialog(
           context: context,
@@ -309,15 +310,20 @@ class _EnrollBottomButtonState extends State<EnrollBottomButton> {
           width: double.infinity,
           height: 56.h,
           color: primaryColor,
-          child: context.read(user) == null
+          child: context.read(firebaseInstanceProvider).currentUser == null
               ? TextButton(
                   onPressed: () async {
-                    await context.read(firebaseApiProvider).googleSignIn();
-                    if (context.read(user) != null) {
-                      watch(sharedPreferenceProvider)
-                          ?.setBool("isSkipped", false);
-                      watch(isSkippedProvider).state = false;
-                    }
+                    await context
+                        .read(firebaseApiProvider)
+                        .googleSignIn()
+                        .then((value) {
+                      if (context.read(firebaseInstanceProvider).currentUser !=
+                          null) {
+                        watch(sharedPreferenceProvider)
+                            ?.setBool("isSkipped", false);
+                        watch(isSkippedProvider).state = false;
+                      }
+                    });
                   },
                   child: Text(
                     "Sign in to Enroll",
@@ -333,8 +339,11 @@ class _EnrollBottomButtonState extends State<EnrollBottomButton> {
                               valueColor: AlwaysStoppedAnimation(
                             Colors.white,
                           )),
-                      data: (data) => widget.course.student
-                              .contains(context.read(user)?.uid ?? "")
+                      data: (data) => widget.course.student.contains(context
+                                  .read(firebaseInstanceProvider)
+                                  .currentUser
+                                  ?.uid ??
+                              "")
                           ? Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
@@ -357,16 +366,24 @@ class _EnrollBottomButtonState extends State<EnrollBottomButton> {
                               style: bodyStyle.copyWith(color: Colors.white),
                             )),
                   onPressed: () async {
-                    if (!widget.course.student
-                        .contains(context.read(user)?.uid)) {
+                    if (!widget.course.student.contains(context
+                        .read(firebaseInstanceProvider)
+                        .currentUser
+                        ?.uid)) {
                       var options = {
                         'key': const String.fromEnvironment("KEY"),
                         'amount': widget.course.price * 100,
                         'name': widget.course.name,
                         'description': widget.course.about.substring(1, 200),
                         'prefill': {
-                          'contact': context.read(user)?.phoneNumber,
-                          'email': context.read(user)?.email
+                          'contact': context
+                              .read(firebaseInstanceProvider)
+                              .currentUser
+                              ?.phoneNumber,
+                          'email': context
+                              .read(firebaseInstanceProvider)
+                              .currentUser
+                              ?.email
                         }
                       };
                       context.read(razorpayProvider).open(options);

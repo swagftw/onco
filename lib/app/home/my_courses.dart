@@ -15,7 +15,7 @@ class MyCourses extends ConsumerWidget {
   @override
   Widget build(BuildContext context, watch) {
     final coursesProvider = watch(courseApi);
-    return context.read(user) == null
+    return context.read(firebaseInstanceProvider).currentUser == null
         ? Scaffold(
             body: Center(
               child: Padding(
@@ -43,7 +43,10 @@ class MyCourses extends ConsumerWidget {
                             await context
                                 .read(firebaseApiProvider)
                                 .googleSignIn();
-                            if (context.read(user) != null) {
+                            if (context
+                                    .read(firebaseInstanceProvider)
+                                    .currentUser !=
+                                null) {
                               watch(sharedPreferenceProvider)
                                   ?.setBool("isSkipped", false);
                               watch(isSkippedProvider).state = false;
@@ -88,8 +91,12 @@ class MyCourses extends ConsumerWidget {
                       coursesProvider.when(
                           data: (courses) => MyCoursesList(
                               courses: courses
-                                  .where((element) => element.student
-                                      .contains(context.read(user)?.uid ?? ""))
+                                  .where((element) => element.student.contains(
+                                      context
+                                              .read(firebaseInstanceProvider)
+                                              .currentUser
+                                              ?.uid ??
+                                          ""))
                                   .toList()),
                           loading: () => Center(
                                 child: CircularProgressIndicator(),
