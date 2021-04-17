@@ -1,0 +1,156 @@
+{
+    "name": "Machine Learning",
+    "offeredBy": "Stanford University",
+    "rating": 4.5,
+    "reviews": 4000,
+    "domain": "Computer Science",
+    "type": "trending",
+    "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "level": "Beginner",
+    "mode": "Online",
+    "language": "English",
+    "instructor": "Lorem Ipsum",
+    "startingDate": 123456,
+    "price": 1234,
+    "banner": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ",
+    "duration": "4",
+    "totalVideos": "12",
+    "student": [
+        "oqOvVY7jvuNKLqolrLKVG19Sb2n1"
+    ],
+    "syllabus": [
+        {
+            "week": 1,
+            "module": "Lorem ipsum dolor sit amet, consectetur",
+            "about": "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
+            "chapters": [
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                }
+            ]
+        },
+        {
+            "week": 2,
+            "module": "Lorem ipsum dolor sit amet, consectetur",
+            "about": "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
+            "chapters": [
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                }
+            ]
+        },
+        {
+            "week": 3,
+            "module": "Lorem ipsum dolor sit amet, consectetur",
+            "about": "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
+            "chapters": [
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                }
+            ]
+        },
+        {
+            "week": 4,
+            "module": "Lorem ipsum dolor sit amet, consectetur",
+            "about": "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
+            "chapters": [
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                }
+            ]
+        },
+        {
+            "week": 5,
+            "module": "Lorem ipsum dolor sit amet, consectetur",
+            "about": "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
+            "chapters": [
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                }
+            ]
+        },
+        {
+            "week": 6,
+            "module": "Lorem ipsum dolor sit amet, consectetur",
+            "about": "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
+            "chapters": [
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                }
+            ]
+        },
+        {
+            "week": 7,
+            "module": "Lorem ipsum dolor sit amet, consectetur",
+            "about": "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
+            "chapters": [
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                },
+                {
+                    "title": "Lorem ipsum"
+                }
+            ]
+        }
+    ]
+}

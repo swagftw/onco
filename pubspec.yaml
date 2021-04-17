@@ -1,0 +1,61 @@
+name: onco
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_native_splash: ^1.1.7+1
+  flutter_screenutil: ^5.0.0
+  flutter_riverpod: ^0.14.0+1
+  flutter_svg: ^0.21.0
+  otp_text_field: ^1.1.0
+  carousel_slider: ^4.0.0-nullsafety.0
+  persistent_bottom_nav_bar: ^4.0.2
+  flutter_credit_card: ^2.0.0
+  flutter_rating_bar: ^4.0.0
+  firebase_auth: ^1.1.0
+  cloud_firestore: ^1.0.5
+  razorpay_flutter: ^1.2.5
+  firebase_core: ^1.0.3
+  json_serializable: ^4.1.0
+  google_sign_in: ^5.0.2
+  cupertino_icons: ^1.0.2
+  shared_preferences: ^2.0.5
+  random_string: ^2.2.0-nullsafety
+  cached_network_image: ^3.0.0
+  uuid: ^3.0.4
+  intl: ^0.17.0
+  expandable: ^5.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  freezed: ^0.14.1+2
+  build_runner: ^1.12.2
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: gilroy
+      fonts:
+        - asset: assets/fonts/gilroy/regular.otf
+        - asset: assets/fonts/gilroy/medium.otf
+        - asset: assets/fonts/gilroy/bold.otf
+        - asset: assets/fonts/gilroy/semi-bold.otf
+        - asset: assets/fonts/gilroy/heavy.otf
+        
+    - family: roboto
+      fonts:
+        - asset: assets/fonts/roboto/regular.ttf
+        - asset: assets/fonts/roboto/medium.ttf
+        - asset: assets/fonts/roboto/bold.ttf
+        
