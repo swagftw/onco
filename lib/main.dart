@@ -40,10 +40,10 @@ class Onco extends StatelessWidget {
 class AuthBuilder extends ConsumerWidget {
   @override
   Widget build(BuildContext context, watch) {
-    final isSkippedLogin = watch(isSkippedProvider);
+    final loginSkipped = watch(isSkippedProvider);
     final size = MediaQuery.of(context).size;
     return ScreenUtilInit(
-      builder: () => isSkippedLogin.state ? TabView() : AuthWidget(),
+      builder: () => loginSkipped.state ? TabView() : AuthWidget(),
       designSize: Size(size.width, size.height),
     );
   }
